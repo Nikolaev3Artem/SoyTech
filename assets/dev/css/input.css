@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    html, body{
+        height: 100%;
+        width: 100%;        
+        scroll-behavior: smooth;
+    }
+    header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    footer .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    footer{
+        height: 360px;
+        background-image:url('../img/hero-image.jpg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;        
+    }
+    li{
+        list-style-type: none;
+    }
+
+}
+
+@layer components{
+    h2{
+        @apply text-5xl font-bold leading-[55px] font-sans text-green md:text-[32px] md:leading-[36px] 
+    }
+    h3{
+        @apply text-4xl font-bold leading-[41px] font-sans text-green md:text-2xl md:leading-[27px]
+    }
+    h4{
+        @apply text-2xl font-medium leading-[24px] font-sans text-green md:text-[20px] md:leading-[25px]
+    }
+    p{
+        @apply text-lg font-normal leading-[22px] font-sans text-green md:text-[16px] md:leading-[20px]
+    }
+    section{
+        @apply my-20 lg:my-10
+    }
+    hr{
+        @apply w-[70%] border-2 border-yellow my-10
+    }
+    .container{
+        @apply max-w-[1100px] px-4
+    }
+    nav.menu{
+        @apply z-10 mt-10
+    }
+    nav.menu ul{
+        @apply flex justify-around w-full h-fit
+    }
+    nav.menu li{
+        @apply h-fit my-auto
+    }
+    nav.menu .languages{
+        @apply flex h-fit my-auto lg:flex-col
+    }
+    nav.menu .languages li{
+        @apply p-2 
+    }
+    nav.menu .languages .active{
+        @apply bg-green rounded-lg
+    }
+    nav.menu .languages .active h4{
+        @apply text-white
+    }
+    nav.menu li h4{
+        @apply text-green
+    }
+    .header-img{
+        @apply max-h-[80%] w-full
+    }
+    nav.menu-tablet{
+        @apply lg:hidden flex
+    }
+    nav.menu-mobile{
+        @apply lg:flex hidden justify-around relative
+    }
+    nav.menu-mobile ul{
+        @apply hidden absolute flex-col bg-white w-fit h-fit gap-4 p-8 left-0 top-[65%]
+    }
+    .products{
+        @apply flex justify-center w-full
+    }
+    .products .company-description{
+        @apply text-center w-[70%] lg:w-full
+    }
+    .products-container{
+        @apply w-full gap-4 flex md:flex-col items-center
+    }   
+    .production-list{
+        @apply flex flex-col gap-6 mt-10 ms-8 md:ms-0
+    }
+    .production-list li{
+        @apply flex items-center gap-8 md:flex-col md:items-start
+    }
+    .section-title{
+        @apply uppercase w-fit whitespace-nowrap
+    }
+    .about-us-list{
+        @apply flex flex-col gap-6
+    }
+    .about-us-list li{
+        @apply flex gap-4
+    }
+    .about-us-list li hr{
+        @apply my-auto w-[79px]
+    }
+    .button-main{
+        @apply bg-green text-white text-3xl py-4 px-24 rounded-lg font-bold
+    }
+    footer .container{
+        @apply md:flex-col items-center py-10 gap-4 lg:justify-center
+    }
+    footer .container .contact{
+        @apply w-[250px]
+    }
+}
+#map{ 
+    height: 450px;
+    width: 100%; 
+}
+.burger{
+    height: 20px;
+    position: relative;
+    width: 30px;
+}
+
+.burger-line{
+    display: flex;
+    width: 30px;
+    height: 2px;
+    background-color: #1C1714;
+    transition: .3s all ease;
+}
+
+.top-line{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bottom-line{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.burger.active > .top-line{
+    transform: translateY(8px) rotate(45deg);
+    transition: 0.3 all ease;
+}
+
+.burger.active > .middle-line{
+    opacity: 0;
+    transition: 0.3 all ease;
+}
+
+.burger.active > .bottom-line{
+    transform: translateY(-10px) rotate(-45deg);
+    transition: 0.3 all ease;
+}
+
+.header-img{
+    background-image: url('../img/hero-image.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 80%;
+    width: 100%;
+}
